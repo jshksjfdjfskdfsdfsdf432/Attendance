@@ -1,5 +1,5 @@
 <?php
-$host = 'sql311.infinityfree.com'; // or check your control panel
+$host = 'sql213.infinityfree.com'; // or check your control panel
 $db   = 'if0_39554433_time_app';
 $user = 'if0_39554433';            // check if this is your correct user
 $pass = 'Myjun12345';    // from your InfinityFree account

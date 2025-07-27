@@ -1,20 +1,14 @@
 <?php
-$host = 'sql213.infinityfree.com'; // or check your control panel
-$db   = 'if0_39554433_time_app';
-$user = 'if0_39554433';            // check if this is your correct user
-$pass = 'Myjun12345';    // from your InfinityFree account
+$host = 'sql213.infinityfree.com';   // Replace with actual host (e.g. sql311.infinityfree.com)
+$user = 'if0_39554433';              // Your InfinityFree username
+$pass = 'Myjun12345';   // Your password
+$db   = 'if0_39554433_time_app';     // Your DB name
 
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+$conn = new mysqli($host, $user, $pass, $db);
 
-$options = [
-  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-  PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-  PDO::ATTR_EMULATE_PREPARES => false,
-];
-
-try {
-  $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (PDOException $e) {
-  die("Database connection failed: " . $e->getMessage());
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
 }
+
+// echo "✅ Connected!";
 ?>
